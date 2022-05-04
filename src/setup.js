@@ -46,12 +46,12 @@ module.exports = async () => {
   const subnetworkName = config.get('plugins.gke.subnetwork_name')
   const serviceAccountName = config.get('plugins.gke.service_account_name')
   const command = `
-  gcloud container clusters create 'microbs-${quote([ deploymentName ])}' \\
-      --project "${quote([ projectName ])}" \\
-      --region "${quote([ regionName ])}" \\
-      --network "projects/${quote([ projectName ])}/global/networks/${quote([ networkName ])}" \\
-      --subnetwork "projects/${quote([ projectName ])}/regions/${quote([ regionName ])}/subnetworks/${quote([ subnetworkName ])}" \\
-      --service-account "${quote([ serviceAccountName ]).replace('\\@', '@')}" \\
+  gcloud container clusters create 'microbs-${utils.sanitize(deploymentName)}' \\
+      --project "${utils.sanitize(projectName)}" \\
+      --region "${utils.sanitize(regionName)}" \\
+      --network "projects/${utils.sanitize(projectName)}/global/networks/${utils.sanitize(networkName)}" \\
+      --subnetwork "projects/${utils.sanitize(projectName)}/regions/${utils.sanitize(regionName)}/subnetworks/${utils.sanitize(subnetworkName)}" \\
+      --service-account "${utils.sanitize(serviceAccountName).replace('\\@', '@')}" \\
       --addons HorizontalPodAutoscaling,HttpLoadBalancing,GcePersistentDiskCsiDriver \\
       --cluster-version "1.21" \\
       --default-max-pods-per-node "110" \\

@@ -44,9 +44,9 @@ module.exports = async () => {
   const subnetworkName = config.get('plugins.gke.subnetwork_name')
   const serviceAccountName = config.get('plugins.gke.service_account_name')
   const command = `
-  gcloud container clusters delete 'microbs-${quote([ deploymentName ])}' \\
-      --project "${quote([ projectName ])}" \\
-      --region "${quote([ regionName ])}" \\
+  gcloud container clusters delete 'microbs-${utils.sanitize(deploymentName)}' \\
+      --project "${utils.sanitize(projectName)}" \\
+      --region "${utils.sanitize(regionName)}" \\
       --quiet
   `
   const res = utils.exec(command, true)

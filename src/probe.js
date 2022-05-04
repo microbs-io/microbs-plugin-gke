@@ -14,9 +14,9 @@ const describe = async () => {
   const regionName = config.get('plugins.gke.region_name')
   const deploymentName = config.get('deployment.name')
   const command = `
-  gcloud container clusters describe "microbs-${quote([ deploymentName ])}" \\
-      --project "${quote([ projectName ])}" \\
-      --region "${quote([ regionName ])}"
+  gcloud container clusters describe "microbs-${utils.sanitize(deploymentName)}" \\
+      --project "${utils.sanitize(projectName)}" \\
+      --region "${utils.sanitize(regionName)}"
   `
   return utils.exec(command, true)
 }
