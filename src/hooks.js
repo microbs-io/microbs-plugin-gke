@@ -1,6 +1,5 @@
 // Main packages
-const logger = require('../../../logger')
-const utils = require('../../../utils')
+const { logger, utils } = require('@microbs.io/core')
 
 /**
  * GKE requires the cluster-admin ClusterRoleBinding to install kube-state-metrics.
