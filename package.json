@@ -1,6 +1,6 @@
 {
   "name": "@microbs.io/plugin-gke",
-  "version": "0.1.4-alpha",
+  "version": "0.1.5-alpha",
   "description": "microbs plugin - gke",
   "license": "Apache-2.0",
   "url": "https://microbs.io/docs/plugins/kubernetes/gke/",
