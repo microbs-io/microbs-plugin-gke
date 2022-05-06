@@ -21,7 +21,7 @@ const validate = () => {
   ]
   if (!utils.configHas(requiredFields)) {
     logger.error()
-    logger.error(`You must set these variables in ${context.get('filepath')} to setup GKE:`)
+    logger.error(`You must set these variables in ${context.get('path.config')} to setup GKE:`)
     logger.error()
     logger.error(requiredFields)
     process.exit(1)
