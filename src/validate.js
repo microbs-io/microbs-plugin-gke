@@ -3,7 +3,7 @@
  */
 
 // Third-party packages
-const hasbin = require('hasbin')
+const commandExists = require('command-exists')
 const semver = require('semver')
 
 // Main packages
@@ -13,7 +13,7 @@ const { config, logger, utils } = require('@microbs.io/core')
  * Validate gcloud installation
  */
 const validateGcloudInstallation = () => {
-  if (hasbin.sync('gcloud'))
+  if (commandExistsSync('gcloud'))
     return [{
       success: true,
       message: 'gcloud is installed'

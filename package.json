@@ -1,6 +1,6 @@
 {
   "name": "@microbs.io/plugin-gke",
-  "version": "0.1.6-alpha",
+  "version": "0.1.7-alpha",
   "description": "microbs plugin - gke",
   "license": "Apache-2.0",
   "url": "https://microbs.io/docs/plugins/kubernetes/gke/",
@@ -26,8 +26,9 @@
     "node": ">=14.16.1"
   },
   "dependencies": {
-    "hasbin": "^1.2.3",
-    "semver": "^7.3.5"
+    "command-exists": "^1.2.9",
+    "semver": "^7.3.5",
+    "shell-quote": "^1.7.3"
   },
   "peerDependencies": {
     "@microbs.io/core": "^0.1.8-alpha"
