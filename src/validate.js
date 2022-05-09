@@ -13,7 +13,7 @@ const { config, logger, utils } = require('@microbs.io/core')
  * Validate gcloud installation
  */
 const validateGcloudInstallation = () => {
-  if (commandExistsSync('gcloud'))
+  if (commandExists.sync('gcloud'))
     return [{
       success: true,
       message: 'gcloud is installed'
