@@ -96,11 +96,14 @@ const validateConfig = () => {
 
 module.exports = async () => {
   const results = []
-  for (var result in validateGcloudInstallation())
-    results.push(result)
-  for (var result in validateGcloudVersion())
-    results.push(result)
-  for (var result in validateConfig())
-    results.push(result)
+  validateGcloudInstallation().forEach(
+    (result) => results.push(result)
+  )
+  validateGcloudVersion().forEach(
+    (result) => results.push(result)
+  )
+  validateConfig().forEach(
+    (result) => results.push(result)
+  )
   return results
 }
