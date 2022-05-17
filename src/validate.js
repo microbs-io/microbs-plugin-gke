@@ -33,7 +33,7 @@ const validateGcloudVersion = () => {
   if (result.stdout) {
     try {
       versionActual = semver.clean(result.stdout.match(/Google Cloud SDK (.+)/)[1])
-      versionRequired = semver.clean('372.0.0')
+      versionRequired = semver.clean('383.0.0')
       if (semver.gte(versionActual, versionRequired))
         return [{
           success: true,

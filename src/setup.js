@@ -70,6 +70,7 @@ module.exports = async () => {
       --no-enable-intra-node-visibility \\
       --no-enable-master-authorized-networks \\
       --no-shielded-integrity-monitoring \\
+      --no-shielded-secure-boot \\
       --num-nodes "1" \\
       --release-channel "regular"
   `
