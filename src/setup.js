@@ -53,7 +53,6 @@ module.exports = async () => {
       --subnetwork "projects/${utils.sanitize(projectName)}/regions/${utils.sanitize(regionName)}/subnetworks/${utils.sanitize(subnetworkName)}" \\
       --service-account "${utils.sanitize(serviceAccountName).replace('\\@', '@')}" \\
       --addons HorizontalPodAutoscaling,HttpLoadBalancing,GcePersistentDiskCsiDriver \\
-      --cluster-version "1.21" \\
       --default-max-pods-per-node "110" \\
       --disk-size "32" \\
       --disk-type "pd-ssd" \\
